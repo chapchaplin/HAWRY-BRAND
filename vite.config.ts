@@ -8,6 +8,12 @@ export default defineConfig(({mode}) => {
   return {
     plugins: [react(), tailwindcss()],
     base: './',
+    build: {
+      target: 'es2015',
+      outDir: 'dist',
+      assetsDir: 'assets',
+      minify: 'esbuild',
+    },
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
