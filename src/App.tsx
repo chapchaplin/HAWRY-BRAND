@@ -25,18 +25,17 @@ const Background = () => {
       <div className="glow-orb w-[500px] h-[500px] bg-brand-accent/5 bottom-[-10%] right-[-10%] animation-delay-2000" />
       <div className="glow-orb w-[400px] h-[400px] bg-yellow-600/5 top-[30%] left-[50%] blur-[150px]" />
       
-      {/* Sparkles (Stars) */}
-      {[...Array(50)].map((_, i) => (
+      {/* Sparkles (Stars) - Reduced for performance */}
+      {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-0.5 h-0.5 bg-white rounded-full"
-          initial={{ opacity: Math.random() * 0.5, scale: 0.5 }}
+          className="absolute w-0.5 h-0.5 bg-white rounded-full will-change-gpu"
+          initial={{ opacity: Math.random() * 0.3, scale: 0.5 }}
           animate={{ 
-            opacity: [0.1, 0.7, 0.1],
-            scale: [0.5, 1.2, 0.5],
+            opacity: [0.1, 0.4, 0.1],
           }}
           transition={{
-            duration: Math.random() * 4 + 3,
+            duration: Math.random() * 3 + 4,
             repeat: Infinity,
             delay: Math.random() * 5,
           }}
@@ -55,20 +54,20 @@ const Header = () => {
     <div className="relative z-10 flex flex-col items-center pt-10 pb-8 px-4 text-center">
       {/* Floating Logo Container - Circular again as requested */}
       <motion.div 
-        className="relative group"
-        animate={{ y: [0, -12, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="relative group will-change-gpu"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       >
-        <div className="glass-card w-40 h-40 rounded-full border-4 border-brand-primary/30 p-3 relative z-10 overflow-hidden shadow-[0_0_60px_rgba(212,175,55,0.3)] flex items-center justify-center bg-black/60">
+        <div className="glass-card w-40 h-40 rounded-full border-4 border-brand-primary/30 p-3 relative z-10 overflow-hidden shadow-[0_0_40px_rgba(212,175,55,0.2)] flex items-center justify-center bg-black/60">
           <img 
             src="https://i.ibb.co/qY7Jq8Fk/logo.png" 
             onError={(e) => {
               (e.target as HTMLImageElement).src = 'https://i.ibb.co/vzG7ZzQY/logo.png';
             }}
             alt="HAWRY BRAND Logo" 
-            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110 will-change-gpu"
             style={{ 
-              filter: 'invert(87%) sepia(45%) saturate(800%) hue-rotate(350deg) brightness(105%) contrast(105%) drop-shadow(0 0 10px rgba(212, 175, 55, 0.5))'
+              filter: 'invert(87%) sepia(45%) saturate(800%) hue-rotate(350deg) brightness(105%) contrast(105%)'
             }}
           />
         </div>
@@ -108,7 +107,7 @@ const SocialLink = ({ icon: Icon, label, username, url, colors, customIcon }: { 
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="glass-card w-full p-4 rounded-[2rem] flex items-center justify-between group relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] active:scale-[0.98]"
+      className="glass-card w-full p-4 rounded-[2rem] flex items-center justify-between group relative overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(255,255,255,0.05)] active:scale-[0.98] will-change-gpu"
       whileHover={{ y: -4 }}
     >
       {/* Hover Background Shimmer */}
