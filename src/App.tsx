@@ -229,52 +229,58 @@ const FooterBranding = () => {
   return (
     <footer className="relative z-10 w-full max-w-md px-6 pb-12 mt-12">
       <div className="flex flex-col items-center gap-8">
-        {/* Shimmer Text */}
+        {/* Shimmer Text - Subtle */}
         <a 
           href="https://chaplin-chap.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center gap-2 group"
         >
-          <div className="flex items-center gap-2">
-            <span className="shimmer bg-clip-text text-transparent bg-white font-arabic text-xs opacity-50 group-hover:opacity-100 transition-opacity">
-              دروستکراوە لە لایەن (چاپلین چاپ)
+          <div className="flex items-center gap-2 opacity-40 group-hover:opacity-100 transition-opacity">
+            <span className="shimmer bg-clip-text text-transparent bg-white font-arabic text-[10px]">
+              DEVELOPED BY
             </span>
-            <ExternalLink size={10} className="text-white/30 group-hover:text-white transition-colors" />
+            <ExternalLink size={8} className="text-white/30" />
           </div>
         </a>
 
-        {/* Chaplin Chap Logo/Button */}
-        <div className="flex flex-col items-center gap-4">
+        {/* Chaplin Chap Logo & Button Branding */}
+        <div className="flex flex-col items-center gap-6">
           <motion.a 
             href="https://chaplin-chap.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-16 h-16 rounded-[1.5rem] bg-black border border-white/10 p-3 shadow-2xl flex items-center justify-center group"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            whileHover={{ scale: 1.1, rotate: 8 }}
+            className="w-24 h-24 rounded-[2rem] bg-black border border-white/10 p-4 shadow-2xl flex items-center justify-center group relative overflow-hidden"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            whileHover={{ scale: 1.05 }}
           >
-            <div className="w-full h-full rounded-xl bg-linear-to-br from-white/10 to-transparent flex items-center justify-center relative overflow-hidden p-1.5">
+            <div className="absolute inset-0 bg-linear-to-br from-white/15 via-transparent to-transparent opacity-50" />
+            <div className="w-full h-full rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center relative z-10 p-2">
                <img 
                  src="https://i.ibb.co/7NNMczJt/chaplin.png" 
                  onError={(e) => {
                    (e.target as HTMLImageElement).src = 'https://i.ibb.co/p6C0hXJ/chaplin.png';
                  }}
                  alt="Chaplin Chap Logo" 
-                 className="w-full h-full object-contain relative z-10 brightness-110" 
+                 className="w-full h-full object-contain brightness-110 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" 
                />
-               <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity animate-pulse" />
             </div>
+            {/* Ambient Glow */}
+            <div className="absolute -bottom-1/2 left-1/2 -translate-x-1/2 w-full h-1/2 bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
           </motion.a>
           
           <motion.a
             href="https://chaplin-chap.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 rounded-full glass-card border-white/10 text-xs font-black tracking-[0.3em] text-white/80 hover:text-white hover:border-white/30 transition-all hover:shadow-[0_0_40px_rgba(255,255,255,0.1)] active:scale-95 animate-glow"
+            className="px-8 py-3.5 rounded-full glass-card border-brand-primary/20 flex flex-col items-center gap-1 group transition-all hover:shadow-[0_0_40px_rgba(212,175,55,0.1)] active:scale-95"
+            whileHover={{ y: -4 }}
           >
-            CHAPLIN CHAP
+            <span className="text-[10px] tracking-[0.4em] text-brand-primary/60 font-bold uppercase">Digital Solution</span>
+            <span className="text-sm font-arabic font-bold text-white group-hover:text-brand-primary transition-colors">
+              دروستکراوە لە لایەن (چـاپـلـین چـاپ)
+            </span>
           </motion.a>
         </div>
       </div>
