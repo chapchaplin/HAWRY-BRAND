@@ -86,14 +86,6 @@ const Header = () => {
         >
           HAWRY BRAND
         </motion.h1>
-        <motion.p
-          className="text-white/40 text-sm font-arabic tracking-widest uppercase"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          وەسـفـێ کـار و سـاخـلـەمـیـیـا تـە
-        </motion.p>
       </div>
 
       {/* Address Badge */}
