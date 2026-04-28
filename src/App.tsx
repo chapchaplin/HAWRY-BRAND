@@ -87,16 +87,28 @@ const Header = () => {
         </motion.h1>
       </div>
 
-      {/* Address Badge */}
-      <motion.div 
-        className="mt-6 glass-card px-5 py-2.5 rounded-full inline-flex items-center gap-2.5 text-xs md:text-sm text-white/90 border-brand-primary/30 active:scale-95 transition-transform cursor-default"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
-      >
-        <MapPin size={16} className="text-brand-accent animate-bounce" />
-        <span className="font-arabic font-medium">لقا ئێك / بازارێ کـەڤـنـێ زاخـو دوکـانـا E11</span>
-      </motion.div>
+      {/* Address Badges */}
+      <div className="mt-6 flex flex-col items-center gap-3">
+        <motion.div 
+          className="glass-card px-5 py-2.5 rounded-full inline-flex items-center gap-2.5 text-xs md:text-sm text-white/90 border-brand-primary/30 active:scale-95 transition-transform cursor-default"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
+        >
+          <MapPin size={16} className="text-brand-accent animate-bounce" />
+          <span className="font-arabic font-medium">لقا ئێك / بازارێ کـەڤـنـێ زاخـو دوکـانـا E11</span>
+        </motion.div>
+
+        <motion.div 
+          className="glass-card px-5 py-2.5 rounded-full inline-flex items-center gap-2.5 text-xs md:text-sm text-white/90 border-brand-primary/30 active:scale-95 transition-transform cursor-default"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.7, type: "spring", stiffness: 200 }}
+        >
+          <MapPin size={16} className="text-brand-accent animate-bounce" />
+          <span className="font-arabic font-medium text-right">لقا دووێ / تـلـکـبـر فـلـکـا مەم و زین</span>
+        </motion.div>
+      </div>
     </div>
   );
 };
@@ -206,7 +218,7 @@ const QuoteSection = () => {
           "برانـدەکـێ ناڤـخـویـی
         </p>
         <p className="text-lg md:text-xl font-arabic font-medium text-white/80 tracking-widest mt-1">
-          بۆ ساخـلـەمـیا تەیـا بەردەوام"
+          بۆ ساخـلـەمـییا تەیـا بەردەوام"
         </p>
       </motion.div>
     </div>
