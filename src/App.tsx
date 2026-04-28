@@ -20,10 +20,10 @@ import { useState, useEffect } from 'react';
 const Background = () => {
   return (
     <div className="fixed inset-0 z-0 bg-[#030303] overflow-hidden">
-      {/* Glowing Orbs */}
-      <div className="glow-orb w-[600px] h-[600px] bg-brand-primary/10 top-[-20%] left-[-10%]" />
-      <div className="glow-orb w-[500px] h-[500px] bg-brand-accent/5 bottom-[-10%] right-[-10%] animation-delay-2000" />
-      <div className="glow-orb w-[400px] h-[400px] bg-yellow-600/5 top-[30%] left-[50%] blur-[150px]" />
+      {/* Optimized Background Orbs - Using static gradients to save GPU */}
+      <div className="glow-orb w-[500px] h-[500px] from-brand-primary/10 top-[-20%] left-[-10%]" />
+      <div className="glow-orb w-[500px] h-[500px] from-brand-accent/5 bottom-[-10%] right-[-10%]" />
+      <div className="glow-orb w-[400px] h-[400px] from-yellow-600/5 top-[30%] left-[50%]" />
       
       {/* Sparkles (Stars) - Reduced for performance */}
       {[...Array(15)].map((_, i) => (
@@ -202,10 +202,10 @@ const QuoteSection = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <p className="text-2xl md:text-3xl font-arabic font-bold text-brand-primary tracking-wide">
+        <p className="text-2xl md:text-3xl font-arabic font-bold text-brand-primary drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
           "برانـدەکـێ ناڤـخـویـی
         </p>
-        <p className="text-lg md:text-xl font-arabic font-medium text-white/70 tracking-wider">
+        <p className="text-lg md:text-xl font-arabic font-medium text-white/80 tracking-widest mt-1">
           بۆ ساخـلـەمـیا تەیـا بەردەوام"
         </p>
       </motion.div>

@@ -34,12 +34,14 @@
   }
 
   .glow-orb {
-    @apply absolute blur-[130px] rounded-full opacity-15 animate-pulse;
+    @apply absolute rounded-full pointer-events-none;
+    background: radial-gradient(circle, var(--tw-gradient-from) 0%, transparent 70%);
   }
 
   .glass-card {
-    @apply bg-white/[0.05] backdrop-blur-md border border-white/10 shadow-2xl;
-    -webkit-backdrop-filter: blur(12px);
+    @apply bg-white/[0.08] border border-white/10 shadow-2xl;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
   .shimmer {
