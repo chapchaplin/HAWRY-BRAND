@@ -195,14 +195,20 @@ const QuoteSection = () => {
         <div className="flex-1 h-[1px] bg-linear-to-l from-transparent to-brand-primary opacity-30" />
       </div>
       
-      <motion.p 
-        className="text-xl md:text-2xl font-arabic font-medium italic text-white/90 leading-relaxed tracking-wide"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+      <motion.div 
+        className="flex flex-col gap-2"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
       >
-        "برانـدەکـێ ناڤـخـویـی بۆ ساخـلـەمـیا تەیـا بەردەوام"
-      </motion.p>
+        <p className="text-2xl md:text-3xl font-arabic font-bold text-brand-primary tracking-wide">
+          "برانـدەکـێ ناڤـخـویـی
+        </p>
+        <p className="text-lg md:text-xl font-arabic font-medium text-white/70 tracking-wider">
+          بۆ ساخـلـەمـیا تەیـا بەردەوام"
+        </p>
+      </motion.div>
     </div>
   );
 };
