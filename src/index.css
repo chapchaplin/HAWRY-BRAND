@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-arabic: "Alexandria", "Noto Sans Arabic", system-ui, sans-serif;
+  
+  --color-gold-50: #FCF9EE;
+  --color-gold-100: #F9F1D6;
+  --color-gold-200: #F3E0A7;
+  --color-gold-300: #ECCB76;
+  --color-gold-400: #E4B549;
+  --color-gold-500: #D4A024;
+  --color-gold-600: #B27E18;
+  --color-gold-700: #885B14;
+  --color-gold-800: #6D4715;
+  --color-gold-900: #5B3B16;
+  
+  --color-brand-primary: #D4AF37;
+  --color-brand-secondary: #F3E0A7;
+  --color-brand-accent: #B8860B;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #070709;
+    color: #F3F4F6;
+    font-family: var(--font-arabic);
+    overflow-x: hidden;
+    direction: rtl;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #FFF6D6 0%, #E5BE5E 50%, #B8860B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gold-metallic-border {
+    border: 1px solid rgba(212, 175, 55, 0.22);
+  }
+
+  .luxury-glass {
+    background: rgba(18, 18, 22, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .luxury-card-hover {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.2s ease, 
+                box-shadow 0.2s ease,
+                background-color 0.2s ease;
+  }
+
+  .luxury-card-hover:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+    background: rgba(24, 24, 30, 0.85);
+    box-shadow: 0 14px 40px -10px rgba(212, 175, 55, 0.12), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .touch-feedback:active {
+    transform: scale(0.98);
+  }
+
+  .ambient-glow-top {
+    background: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212, 175, 55, 0.16), transparent 80%);
+  }
+
+  .ambient-spotlight {
+    background: radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.06), transparent 70%);
+  }
+}
